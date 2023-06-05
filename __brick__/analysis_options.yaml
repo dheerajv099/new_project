@@ -1,0 +1,87 @@
+# This file configures the analyzer, which statically analyzes Dart code to
+# check for errors, warnings, and lints.
+#
+# The issues identified by the analyzer are surfaced in the UI of Dart-enabled
+# IDEs (https://dart.dev/tools#ides-and-editors). The analyzer can also be
+# invoked from the command line by running `flutter analyze`.
+
+# The following line activates a set of recommended lints for Flutter apps,
+# packages, and plugins designed to encourage good coding practices.
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  exclude:
+    - bricks/
+
+
+linter:
+  # The lint rules applied to this project can be customized in the
+  # section below to disable rules from the `package:flutter_lints/flutter.yaml`
+  # included above or to enable additional rules. A list of all available lints
+  # and their documentation is published at
+  # https://dart-lang.github.io/linter/lints/index.html.
+  #
+  # Instead of disabling a lint rule for the entire project in the
+  # section below, it can also be suppressed for a single line of code
+  # or a specific dart file by using the `// ignore: name_of_lint` and
+  # `// ignore_for_file: name_of_lint` syntax on the line or in the file
+  # producing the lint.
+  rules:
+    avoid_print: false  # Uncomment to disable the `avoid_print` rule
+    prefer_single_quotes: true  # `prefer_single_quotes` rule
+    always_use_package_imports: true
+    avoid_web_libraries_in_flutter: true
+    valid_regexps: true
+    slash_for_doc_comments: true
+    lines_longer_than_80_chars: true
+    avoid_empty_else: true
+    no_adjacent_strings_in_list: true
+    no_duplicate_case_values: true
+    no_logic_in_create_state: true
+    prefer_void_to_null: true
+    always_put_control_body_on_new_line: true
+    always_put_required_named_parameters_first: true
+    # When need to specify type set true to [always_specify_types]
+    always_specify_types: false
+    avoid_function_literals_in_foreach_calls: true
+    avoid_positional_boolean_parameters: true
+    avoid_void_async: true
+    file_names: true
+    flutter_style_todos: true
+    use_colored_box: true
+    use_decorated_box: true
+    use_named_constants: true
+    sort_pub_dependencies: true
+
+# DART Code metrics
+dart_code_metrics:
+  metrics:
+    cyclomatic-complexity: 20
+    number-of-parameters: 4
+    maximum-nesting-level: 5
+    lines-of-code: 200
+    number-of-methods: 10
+    source-lines-of-code: 50
+
+  metrics-exclude:
+    - test/**
+  rules:
+    - newline-before-return
+    - no-boolean-literal-compare
+    - no-empty-block
+    - prefer-trailing-comma
+    - prefer-conditional-expressions
+    - no-equal-then-else
+    - prefer-single-widget-per-file
+    - prefer-using-list-view
+    - avoid-expanded-as-spacer
+    - avoid-unnecessary-setstate
+    - avoid-shrink-wrap-in-lists
+    - avoid-returning-widgets
+  anti-patterns:
+    - long-method
+    - long-parameter-list
+
+
+# Additional information about this file can be found at
+# https://dart.dev/guides/language/analysis-options
